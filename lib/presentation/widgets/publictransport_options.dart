@@ -28,7 +28,7 @@ class PTOptions extends StatelessWidget {
               color: theme.oppColor,
             ),
             Padding(
-              padding: EdgeInsets.only(left: 17),
+              padding: const EdgeInsets.only(left: 17),
               child: Text(label, style: ubermove(theme.oppColor, 16, weight: FontWeight.bold)),
             ),
             Expanded(

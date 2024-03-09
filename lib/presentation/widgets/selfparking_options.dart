@@ -46,7 +46,7 @@ class SelfParkingOption extends StatelessWidget {
                   style: ubermove(theme.oppColor, 14),
                 ),
                 Padding(
-                    padding: EdgeInsets.only(left: 3),
+                    padding: const EdgeInsets.only(left: 3),
                     child: Icon(
                       Icons.info_outline_rounded,
                       color: theme.accentColor3,

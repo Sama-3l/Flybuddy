@@ -103,8 +103,8 @@ class TerminalMap extends StatelessWidget {
                     Center(
                         child: ElevatedButton(
                       onPressed: () {},
-                      child: Text("View", style: ubermove(theme.primaryColor, 14)),
                       style: ElevatedButton.styleFrom(backgroundColor: theme.oppColor),
+                      child: Text("View", style: ubermove(theme.primaryColor, 14)),
                     ))
                   ]),
                 )

@@ -23,7 +23,7 @@ class ImageHeaderTag extends StatelessWidget {
           padding: const EdgeInsets.only(top: 9),
           child: Text(mainLabel, style: ubermove(theme.oppColor, 16, weight: FontWeight.w600)),
         ),
-        Text(secondaryLabel, style: ubermove(theme.accentColor2, 11, weight: FontWeight.w500))
+        Text(secondaryLabel, style: ubermove(theme.accentColor3, 11, weight: FontWeight.w500))
       ]),
     );
   }

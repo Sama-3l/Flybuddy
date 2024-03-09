@@ -13,7 +13,7 @@ class WidgetGenerator {
       texts.add(TextSpan(text: '\$', style: ubermove(theme.accentColor5, 11, letterSpacing: 2)));
     }
     return Padding(
-      padding: EdgeInsets.only(top: 13, bottom: 10),
+      padding: const EdgeInsets.only(top: 13, bottom: 10),
       child: RichText(
         text: TextSpan(children: texts),
       ),

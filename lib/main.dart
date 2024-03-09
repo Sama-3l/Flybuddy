@@ -31,8 +31,8 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-            // useMaterial3: true,
-            ),
+          useMaterial3: true,
+        ),
         home: BlocBuilder<DarkModeCubit, DarkModeState>(builder: (context, state) {
           if (state is DarkMode) {
             theme = DarkTheme();

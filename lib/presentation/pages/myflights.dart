@@ -1,232 +1,151 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flybuddy/assets/svgs/svgcode.dart';
-import 'package:flybuddy/business_logic/cubits/darkModeCubit/dark_mode_cubit.dart';
 import 'package:flybuddy/constants/colors.dart';
 import 'package:flybuddy/functions/const_functions.dart';
+import 'package:flybuddy/presentation/widgets/flight_options.dart';
+import 'package:flybuddy/presentation/widgets/myflights_boardingCard.dart';
+import 'package:flybuddy/presentation/widgets/myflights_card.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 
-class MyFlights extends StatelessWidget {
-  MyFlights({super.key, required this.theme, required this.state});
+class MyFlights extends StatefulWidget {
+  MyFlights({super.key, required this.theme});
 
   LightTheme theme;
-  DarkModeState state;
 
+  @override
+  State<MyFlights> createState() => _MyFlightsState();
+}
+
+class _MyFlightsState extends State<MyFlights> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
-          backgroundColor: theme.primaryColor,
-          floatingActionButton: FloatingActionButton(
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-            backgroundColor: theme.oppColor,
-            onPressed: () {
-              if (state is DarkMode) {
-                theme = LightTheme();
-                BlocProvider.of<DarkModeCubit>(context).onLightMode();
-              } else {
-                theme = DarkTheme();
-                BlocProvider.of<DarkModeCubit>(context).onDarkMode();
-              }
-            },
-            child: Iconify(themeIcon, size: 16, color: theme.primaryColor),
-          ),
-          body: SingleChildScrollView(
-            child: Column(
-              children: [
-                Container(
-                  decoration: BoxDecoration(color: theme.accentColor5),
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 30, left: 20, right: 20),
-                    child: Column(
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(color: theme.primaryColor, borderRadius: BorderRadius.circular(10)),
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 20),
-                            child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-                              const CircleAvatar(radius: 20),
-                              Column(
-                                mainAxisSize: MainAxisSize.min,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "Flights",
-                                    style: ubermove(theme.accentColor3, 12),
-                                  ),
-                                  const SizedBox(height: 5),
-                                  Text(
-                                    "04",
-                                    style: ubermove(theme.oppColor, 16),
-                                  )
-                                ],
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Text(
-                                    "Countries",
-                                    style: ubermove(theme.accentColor3, 12),
-                                  ),
-                                  const SizedBox(height: 5),
-                                  Text(
-                                    "06",
-                                    style: ubermove(theme.oppColor, 16),
-                                  )
-                                ],
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Text(
-                                    "Distance",
-                                    style: ubermove(theme.accentColor3, 12),
-                                  ),
-                                  const SizedBox(height: 5),
-                                  Text(
-                                    "4,237 km",
-                                    style: ubermove(theme.oppColor, 16),
-                                  )
-                                ],
-                              )
-                            ]),
-                          ),
-                        ),
-                        Container(height: 150),
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 30, right: 15),
-                  child: Row(children: [
-                    Text("My Flights", style: ubermove(theme.oppColor, 26, weight: FontWeight.bold)),
-                    Padding(
-                        padding: const EdgeInsets.only(left: 10),
-                        child: Container(
-                          height: 20,
-                          width: 20,
-                          decoration: BoxDecoration(color: theme.accentColor1, borderRadius: BorderRadius.circular(20)),
-                          child: const Icon(Icons.keyboard_arrow_down, size: 20),
-                        )),
-                    Expanded(
-                        child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        IconButton(onPressed: () {}, icon: const Iconify(search, size: 20)),
-                        IconButton(onPressed: () {}, icon: const Iconify(add, size: 20)),
-                      ],
-                    ))
-                  ]),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                  child: Container(
-                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(12), boxShadow: [
-                        BoxShadow(blurRadius: 8, spreadRadius: 0, offset: Offset.zero, color: theme.oppColor.withOpacity(0.07)),
-                      ]),
+        child: Scaffold(
+            backgroundColor: widget.theme.primaryColor,
+            body: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(color: widget.theme.accentColor5),
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 30, left: 20, right: 20),
                       child: Column(
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text("Mon, 20 Dec 24", style: ubermove(theme.oppColor, 14, weight: FontWeight.bold)),
-                                Row(
-                                  children: [
-                                    const Padding(
-                                      padding: EdgeInsets.only(right: 8.0),
-                                      child: Iconify(
-                                        indigo,
-                                        size: 20,
-                                      ),
-                                    ),
-                                    Text("6E 725", style: ubermove(theme.oppColor, 12))
-                                  ],
-                                )
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 20),
-                            child: Container(
-                              height: 1,
-                              color: theme.accentColor5,
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
+                          Container(
+                            decoration: BoxDecoration(color: widget.theme.primaryColor, borderRadius: BorderRadius.circular(10)),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 20),
+                              child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+                                const CircleAvatar(radius: 20),
                                 Column(
+                                  mainAxisSize: MainAxisSize.min,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Row(
-                                      children: [
-                                        Text("DEL", style: ubermove(theme.oppColor, 20, weight: FontWeight.bold)),
-                                        Container(width: 5),
-                                        Text("08:15", style: ubermove(theme.correctColor, 20, weight: FontWeight.bold))
-                                      ],
+                                    Text(
+                                      "Flights",
+                                      style: ubermove(widget.theme.accentColor3, 12),
                                     ),
-                                    Text("New Delhi", style: ubermove(theme.accentColor3, 12))
+                                    const SizedBox(height: 5),
+                                    Text(
+                                      "04",
+                                      style: ubermove(widget.theme.oppColor, 16),
+                                    )
                                   ],
                                 ),
-                                Text("2h 5m", style: ubermove(theme.accentColor3, 12)),
                                 Column(
-                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    Row(
-                                      children: [
-                                        Text("10:15", style: ubermove(theme.oppColor, 20, weight: FontWeight.bold)),
-                                        Container(width: 5),
-                                        Text("BOM", style: ubermove(theme.oppColor, 20, weight: FontWeight.bold))
-                                      ],
+                                    Text(
+                                      "Countries",
+                                      style: ubermove(widget.theme.accentColor3, 12),
                                     ),
-                                    Text("Mumbai", style: ubermove(theme.accentColor3, 12))
+                                    const SizedBox(height: 5),
+                                    Text(
+                                      "06",
+                                      style: ubermove(widget.theme.oppColor, 16),
+                                    )
                                   ],
                                 ),
-                              ],
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Text(
+                                      "Distance",
+                                      style: ubermove(widget.theme.accentColor3, 12),
+                                    ),
+                                    const SizedBox(height: 5),
+                                    Text(
+                                      "4,237 km",
+                                      style: ubermove(widget.theme.oppColor, 16),
+                                    )
+                                  ],
+                                )
+                              ]),
                             ),
                           ),
-                          Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 30),
-                              child: Container(
-                                decoration: BoxDecoration(borderRadius: BorderRadius.circular(12), color: theme.oppColor),
-                                child: Padding(
-                                  padding: const EdgeInsets.only(left: 20, top: 20, bottom: 20, right: 20),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                                        Text("Boarding closes in 00:30", style: ubermove(theme.primaryColor, 14, weight: FontWeight.bold)),
-                                        Container(height: 6),
-                                        Text("On time", style: ubermove(theme.accentColor3, 12))
-                                      ]),
-                                      Container(
-                                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(4), color: theme.yellow),
-                                          child: Padding(
-                                            padding: const EdgeInsets.all(10),
-                                            child: Text("T20", style: ubermove(theme.oppColor, 14, weight: FontWeight.bold)),
-                                          )),
-                                    ],
-                                  ),
-                                ),
-                              ))
+                          Container(height: 150),
                         ],
-                      )),
-                )
-              ],
-            ),
-          )),
-    );
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20, top: 30, right: 15),
+                    child: Row(children: [
+                      Text("My Flights", style: ubermove(widget.theme.oppColor, 26, weight: FontWeight.bold)),
+                      Padding(
+                          padding: const EdgeInsets.only(left: 10),
+                          child: Container(
+                            height: 20,
+                            width: 20,
+                            decoration: BoxDecoration(color: widget.theme.accentColor1, borderRadius: BorderRadius.circular(20)),
+                            child: Icon(Icons.keyboard_arrow_down, color: widget.theme.oppColor, size: 20),
+                          )),
+                      Expanded(
+                          child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          IconButton(onPressed: () {}, icon: Iconify(search, color: widget.theme.oppColor, size: 20)),
+                          IconButton(onPressed: () {}, icon: Iconify(add, color: widget.theme.oppColor, size: 20)),
+                        ],
+                      ))
+                    ]),
+                  ),
+                  FlightCard(
+                    theme: widget.theme,
+                    short1: "DEL",
+                    time1: "08:15",
+                    city1: "New Delhi",
+                    short2: "BOM",
+                    time2: "10:15",
+                    city2: "Mumbai",
+                    diff: "2h 5m",
+                    day: "Mon, 20 Dec 24",
+                    flightNumber: "6E 725",
+                    airlineIcon: indigo,
+                  ),
+                  BoardingCard(theme: widget.theme, time: "00:30", status: "On time", terminal: "T20"),
+                  FlightOptions(theme: widget.theme),
+                  FlightCard(
+                    theme: widget.theme,
+                    short1: "BOM",
+                    time1: "08:15",
+                    city1: "Mumbai",
+                    short2: "DEL",
+                    time2: "10:15",
+                    city2: "New Delhi",
+                    diff: "2h 5m",
+                    day: "Mon, 24 Dec 24",
+                    flightNumber: "6E 725",
+                    airlineIcon: indigo,
+                  ),
+                  BoardingCard(theme: widget.theme, time: "83:23:30", status: "On time", terminal: "T20"),
+                  FlightOptions(theme: widget.theme),
+                ],
+              ),
+            )));
   }
 }

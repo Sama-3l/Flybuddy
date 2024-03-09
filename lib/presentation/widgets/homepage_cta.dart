@@ -21,7 +21,7 @@ class Cta extends StatelessWidget {
                       duration: Duration(seconds: 1),
                       content: Text('Getting Directions'),
                     )),
-                style: ElevatedButton.styleFrom(backgroundColor: theme.oppColor, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
+                style: ElevatedButton.styleFrom(padding: EdgeInsets.zero, backgroundColor: theme.oppColor, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 15),
                   child: Row(
@@ -29,14 +29,14 @@ class Cta extends StatelessWidget {
                     children: [
                       Iconify(
                         direction,
-                        size: 18,
+                        size: 14,
                         color: theme.primaryColor,
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 10),
                         child: Text(
                           "Get direction",
-                          style: ubermove(theme.primaryColor, 16, weight: FontWeight.bold),
+                          style: ubermove(theme.primaryColor, 14, weight: FontWeight.bold),
                         ),
                       )
                     ],
@@ -50,7 +50,7 @@ class Cta extends StatelessWidget {
                       duration: Duration(seconds: 1),
                       content: Text('Calling Airport'),
                     )),
-                style: ElevatedButton.styleFrom(backgroundColor: theme.oppColor, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
+                style: ElevatedButton.styleFrom(padding: EdgeInsets.zero, backgroundColor: theme.oppColor, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 15),
                   child: Row(
@@ -58,14 +58,14 @@ class Cta extends StatelessWidget {
                     children: [
                       Iconify(
                         call,
-                        size: 18,
+                        size: 14,
                         color: theme.primaryColor,
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 10),
                         child: Text(
                           "Call airport",
-                          style: ubermove(theme.primaryColor, 16, weight: FontWeight.bold),
+                          style: ubermove(theme.primaryColor, 14, weight: FontWeight.bold),
                         ),
                       )
                     ],

@@ -38,7 +38,6 @@ class _HeaderState extends State<Header> {
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => MyFlights(
                           theme: widget.theme,
-                          state: widget.state,
                         )));
               },
               child: Text(
