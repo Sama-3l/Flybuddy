@@ -1,3 +1,5 @@
+// ignore_for_file: overridden_fields
+
 import 'package:flutter/material.dart';
 
 class LightTheme {
@@ -7,5 +9,22 @@ class LightTheme {
   final Color accentColor2 = const Color(0xff909090);
   final Color accentColor3 = const Color(0xff767676);
   final Color correctColor = const Color(0xff23A049);
+  final Color yellow = const Color(0xffF2B33A);
+}
+
+class DarkTheme extends LightTheme {
+  @override
+  final Color primaryColor = const Color(0xffffffff);
+  @override
+  final Color oppColor = const Color(0xff080808);
+  @override
+  final Color accentColor1 = const Color(0xffEEEEEE);
+  @override
+  final Color accentColor2 = const Color(0xff909090);
+  @override
+  final Color accentColor3 = const Color(0xff767676);
+  @override
+  final Color correctColor = const Color(0xff23A049);
+  @override
   final Color yellow = const Color(0xffF2B33A);
 }

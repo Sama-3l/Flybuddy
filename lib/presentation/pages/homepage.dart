@@ -1,7 +1,9 @@
-// ignore_for_file: must_be_immutable
+// ignore_for_file: must_be_immutable, prefer_const_constructors
 
 import 'package:flutter/material.dart';
 import 'package:flybuddy/constants/colors.dart';
+import 'package:flybuddy/presentation/widgets/homepage_header.dart';
+import 'package:flybuddy/presentation/widgets/homepage_imageheader.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({super.key, required this.theme});
@@ -13,24 +15,15 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
+      body: Padding(
+        padding: EdgeInsets.only(top: 27, left: 20, right: 20),
+        child: ListView(children: <Widget>[
+          Header(theme: widget.theme),
+          ImageHeader(theme: widget.theme)
+        ]),
       ),
     );
   }
