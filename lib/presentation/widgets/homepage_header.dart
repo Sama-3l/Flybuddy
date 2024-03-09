@@ -29,19 +29,19 @@ class _HeaderState extends State<Header> {
         Text(
           'Dubai',
           style: ubermove(
-            widget.theme.accentColor2,
+            widget.theme.accentColor3,
             12,
             weight: FontWeight.w600,
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(left: 3, right: 3),
-          child: Container(height: 3, width: 3, decoration: BoxDecoration(color: widget.theme.accentColor2, borderRadius: BorderRadius.circular(3))),
+          padding: const EdgeInsets.only(left: 3, right: 3),
+          child: Container(height: 3, width: 3, decoration: BoxDecoration(color: widget.theme.accentColor3, borderRadius: BorderRadius.circular(3))),
         ),
         Text(
           'United Arab Emirates',
           style: ubermove(
-            widget.theme.accentColor2,
+            widget.theme.accentColor3,
             12,
             weight: FontWeight.w500,
           ),

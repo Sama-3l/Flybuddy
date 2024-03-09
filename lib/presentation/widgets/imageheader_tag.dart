@@ -18,7 +18,7 @@ class ImageHeaderTag extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       child: Column(children: [
-        Iconify(icon, size: 16),
+        Iconify(icon, size: 16, color: theme.oppColor),
         Padding(
           padding: const EdgeInsets.only(top: 9),
           child: Text(mainLabel, style: ubermove(theme.oppColor, 16, weight: FontWeight.w600)),

@@ -16,7 +16,7 @@ class ImageHeader extends StatelessWidget {
       padding: EdgeInsets.only(top: 20),
       child: Container(
         height: 285,
-        width: 335,
+        width: double.infinity,
         decoration: BoxDecoration(
             image: const DecorationImage(
               image: AssetImage("lib/assets/images/dubai.jpeg"),
@@ -26,7 +26,10 @@ class ImageHeader extends StatelessWidget {
         padding: const EdgeInsets.only(left: 10, right: 10, bottom: 10),
         child: Column(
           children: [
-            const Expanded(child: SizedBox()),
+            const Expanded(
+                child: SizedBox(
+              width: double.infinity,
+            )),
             Expanded(child: HeroCard(theme: theme)),
           ],
         ),
