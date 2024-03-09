@@ -47,9 +47,9 @@ class MyFlights extends StatelessWidget {
                         Container(
                           decoration: BoxDecoration(color: theme.primaryColor, borderRadius: BorderRadius.circular(10)),
                           child: Padding(
-                            padding: EdgeInsets.symmetric(vertical: 12, horizontal: 20),
+                            padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 20),
                             child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-                              CircleAvatar(radius: 20),
+                              const CircleAvatar(radius: 20),
                               Column(
                                 mainAxisSize: MainAxisSize.min,
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -104,29 +104,29 @@ class MyFlights extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 20, top: 30, right: 15),
+                  padding: const EdgeInsets.only(left: 20, top: 30, right: 15),
                   child: Row(children: [
                     Text("My Flights", style: ubermove(theme.oppColor, 26, weight: FontWeight.bold)),
                     Padding(
-                        padding: EdgeInsets.only(left: 10),
+                        padding: const EdgeInsets.only(left: 10),
                         child: Container(
                           height: 20,
                           width: 20,
                           decoration: BoxDecoration(color: theme.accentColor1, borderRadius: BorderRadius.circular(20)),
-                          child: Icon(Icons.keyboard_arrow_down, size: 20),
+                          child: const Icon(Icons.keyboard_arrow_down, size: 20),
                         )),
                     Expanded(
                         child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        IconButton(onPressed: () {}, icon: Iconify(search, size: 20)),
-                        IconButton(onPressed: () {}, icon: Iconify(add, size: 20)),
+                        IconButton(onPressed: () {}, icon: const Iconify(search, size: 20)),
+                        IconButton(onPressed: () {}, icon: const Iconify(add, size: 20)),
                       ],
                     ))
                   ]),
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                   child: Container(
                       decoration: BoxDecoration(borderRadius: BorderRadius.circular(12), boxShadow: [
                         BoxShadow(blurRadius: 8, spreadRadius: 0, offset: Offset.zero, color: theme.oppColor.withOpacity(0.07)),
@@ -134,7 +134,7 @@ class MyFlights extends StatelessWidget {
                       child: Column(
                         children: [
                           Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
@@ -155,14 +155,14 @@ class MyFlights extends StatelessWidget {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 20),
+                            padding: const EdgeInsets.symmetric(horizontal: 20),
                             child: Container(
                               height: 1,
                               color: theme.accentColor5,
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -198,7 +198,7 @@ class MyFlights extends StatelessWidget {
                             ),
                           ),
                           Padding(
-                              padding: EdgeInsets.symmetric(vertical: 30),
+                              padding: const EdgeInsets.symmetric(vertical: 30),
                               child: Container(
                                 decoration: BoxDecoration(borderRadius: BorderRadius.circular(12), color: theme.oppColor),
                                 child: Padding(
