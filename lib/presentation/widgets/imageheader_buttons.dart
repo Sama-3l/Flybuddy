@@ -6,16 +6,17 @@ import 'package:flybuddy/functions/const_functions.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 
 class HeaderButtons extends StatelessWidget {
-  HeaderButtons({super.key, required this.theme, required this.icon, required this.label});
+  HeaderButtons({super.key, required this.theme, required this.icon, required this.label, required this.onTap});
 
   LightTheme theme;
   String icon;
   String label;
+  void Function() onTap;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-        onTap: () {},
+        onTap: onTap,
         child: Row(children: [
           Padding(
             padding: const EdgeInsets.only(right: 4),

@@ -33,7 +33,14 @@ class HeroCard extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  HeaderButtons(theme: theme, icon: direction, label: "Get Direction"),
+                  HeaderButtons(
+                      theme: theme,
+                      icon: direction,
+                      label: "Get Direction",
+                      onTap: () => ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            duration: Duration(seconds: 1),
+                            content: Text('Getting Directions'),
+                          ))),
                   Padding(
                     padding: EdgeInsets.only(top: 10, bottom: 10),
                     child: Container(
@@ -41,7 +48,14 @@ class HeroCard extends StatelessWidget {
                       color: theme.accentColor1,
                     ),
                   ),
-                  HeaderButtons(theme: theme, icon: call, label: "Call airport"),
+                  HeaderButtons(
+                      theme: theme,
+                      icon: call,
+                      label: "Call airport",
+                      onTap: () => ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            duration: Duration(seconds: 1),
+                            content: Text('Calling Airport'),
+                          ))),
                 ],
               ),
             ),

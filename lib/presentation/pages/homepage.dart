@@ -35,7 +35,10 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Padding(
         padding: EdgeInsets.only(top: 27, left: 20, right: 20),
         child: ListView(children: <Widget>[
-          Header(theme: widget.theme),
+          Header(
+            theme: widget.theme,
+            state: widget.state,
+          ),
           ImageHeader(theme: widget.theme),
           Options(theme: widget.theme),
           TaxiService(theme: widget.theme),

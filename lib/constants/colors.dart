@@ -21,15 +21,15 @@ class DarkTheme extends LightTheme {
   @override
   final Color oppColor = const Color(0xffffffff);
   @override
-  final Color accentColor1 = Color.fromARGB(255, 37, 37, 37);
+  final Color accentColor1 = Color.fromARGB(255, 46, 45, 45);
   @override
-  final Color accentColor2 = const Color(0xffE4E4E4);
+  final Color accentColor2 = Color.fromARGB(255, 35, 35, 35);
   @override
-  final Color accentColor3 = const Color(0xff909090);
+  final Color accentColor3 = Color.fromARGB(255, 193, 188, 188);
   @override
-  final Color accentColor4 = const Color(0xff767676);
+  final Color accentColor4 = Color.fromARGB(255, 234, 219, 219);
   @override
-  final Color accentColor5 = const Color(0xffDCDCDC);
+  final Color accentColor5 = Color.fromARGB(255, 63, 62, 62);
   @override
   final Color correctColor = const Color(0xff23A049);
   @override

@@ -24,6 +24,8 @@ class ForeignExchange extends StatelessWidget {
               Text("Foreign exchange", style: ubermove(theme.oppColor, 20, weight: FontWeight.bold)),
               ExpansionTile(
                 initiallyExpanded: true,
+                collapsedIconColor: theme.oppColor,
+                iconColor: theme.oppColor,
                 title: Text("Travelex", style: ubermove(theme.oppColor, 14)),
                 tilePadding: EdgeInsets.zero,
                 expandedAlignment: Alignment.centerLeft,
@@ -38,6 +40,8 @@ class ForeignExchange extends StatelessWidget {
               ),
               ExpansionTile(
                 initiallyExpanded: false,
+                collapsedIconColor: theme.oppColor,
+                iconColor: theme.oppColor,
                 title: Text("Al Ansari Exchange", style: ubermove(theme.oppColor, 14)),
                 tilePadding: EdgeInsets.zero,
                 expandedAlignment: Alignment.centerLeft,
@@ -52,6 +56,8 @@ class ForeignExchange extends StatelessWidget {
               ),
               ExpansionTile(
                 initiallyExpanded: false,
+                collapsedIconColor: theme.oppColor,
+                iconColor: theme.oppColor,
                 title: Text("Emirates NBD", style: ubermove(theme.oppColor, 14)),
                 tilePadding: EdgeInsets.zero,
                 expandedAlignment: Alignment.centerLeft,

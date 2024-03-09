@@ -28,7 +28,15 @@ class PublicTransport extends StatelessWidget {
                 padding: const EdgeInsets.only(bottom: 20),
                 child: Text("Public Transport", style: ubermove(theme.oppColor, 20, weight: FontWeight.bold)),
               ),
-              PTOptions(theme: theme, icon: metro, label: "Metro", secondaryLabel: "6am - 10pm"),
+              PTOptions(
+                  theme: theme,
+                  icon: metro,
+                  label: "Metro",
+                  secondaryLabel: "6am - 10pm",
+                  onTap: () => ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                        duration: Duration(seconds: 1),
+                        content: Text('Metro Tickets here'),
+                      ))),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 20),
                 child: Container(
@@ -36,7 +44,15 @@ class PublicTransport extends StatelessWidget {
                   color: theme.accentColor1,
                 ),
               ),
-              PTOptions(theme: theme, icon: bus, label: "Bus", secondaryLabel: "available 24hrs"),
+              PTOptions(
+                  theme: theme,
+                  icon: bus,
+                  label: "Bus",
+                  secondaryLabel: "available 24hrs",
+                  onTap: () => ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                        duration: Duration(seconds: 1),
+                        content: Text('Bus tickets and routes here  '),
+                      ))),
             ],
           ),
         ),

@@ -27,13 +27,37 @@ class ContactAirport extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text("Contact airport", style: ubermove(theme.oppColor, 20, weight: FontWeight.bold)),
-                AirportContactOption(theme: theme, label: "Police"),
+                AirportContactOption(
+                    theme: theme,
+                    label: "Police",
+                    onTap: () => ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                          duration: Duration(seconds: 1),
+                          content: Text('Calling Airport Police'),
+                        ))),
                 Padding(padding: const EdgeInsets.symmetric(vertical: 13), child: Container(color: theme.accentColor1, height: 1)),
-                AirportContactOption(theme: theme, label: "Lost and found"),
+                AirportContactOption(
+                    theme: theme,
+                    label: "Lost and found",
+                    onTap: () => ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                          duration: Duration(seconds: 1),
+                          content: Text('Calling Lost and found'),
+                        ))),
                 Padding(padding: const EdgeInsets.symmetric(vertical: 13), child: Container(color: theme.accentColor1, height: 1)),
-                AirportContactOption(theme: theme, label: "Transport"),
+                AirportContactOption(
+                    theme: theme,
+                    label: "Transport",
+                    onTap: () => ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                          duration: Duration(seconds: 1),
+                          content: Text('Calling Transport services'),
+                        ))),
                 Padding(padding: const EdgeInsets.symmetric(vertical: 13), child: Container(color: theme.accentColor1, height: 1)),
-                AirportContactOption(theme: theme, label: "Head office"),
+                AirportContactOption(
+                    theme: theme,
+                    label: "Head office",
+                    onTap: () => ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                          duration: Duration(seconds: 1),
+                          content: Text('Calling Head office'),
+                        ))),
               ],
             );
           }),

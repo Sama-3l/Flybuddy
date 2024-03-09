@@ -5,10 +5,11 @@ import 'package:flybuddy/functions/const_functions.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 
 class AirportContactOption extends StatelessWidget {
-  const AirportContactOption({super.key, required this.theme, required this.label});
+  const AirportContactOption({super.key, required this.theme, required this.label, required this.onTap});
 
   final LightTheme theme;
   final String label;
+  final void Function() onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -18,16 +19,19 @@ class AirportContactOption extends StatelessWidget {
         Expanded(
           child: Align(
             alignment: Alignment.centerRight,
-            child: Container(
-                decoration: BoxDecoration(color: theme.accentColor1, borderRadius: BorderRadius.circular(18)),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 9),
-                  child: Iconify(
-                    call,
-                    size: 18,
-                    color: theme.oppColor,
-                  ),
-                )),
+            child: GestureDetector(
+              onTap: onTap,
+              child: Container(
+                  decoration: BoxDecoration(color: theme.accentColor1, borderRadius: BorderRadius.circular(18)),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 9),
+                    child: Iconify(
+                      call,
+                      size: 18,
+                      color: theme.oppColor,
+                    ),
+                  )),
+            ),
           ),
         )
       ],

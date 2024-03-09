@@ -17,7 +17,10 @@ class Cta extends StatelessWidget {
         children: [
           Expanded(
             child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () => ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                      duration: Duration(seconds: 1),
+                      content: Text('Getting Directions'),
+                    )),
                 style: ElevatedButton.styleFrom(backgroundColor: theme.oppColor, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 15),
@@ -43,7 +46,10 @@ class Cta extends StatelessWidget {
           Container(width: 13),
           Expanded(
             child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () => ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                      duration: Duration(seconds: 1),
+                      content: Text('Calling Airport'),
+                    )),
                 style: ElevatedButton.styleFrom(backgroundColor: theme.oppColor, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 15),

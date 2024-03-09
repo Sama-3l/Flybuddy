@@ -6,10 +6,12 @@ class DarkModeCubit extends Cubit<DarkModeState> {
   DarkModeCubit() : super(DarkModeInitial());
 
   onDarkMode() {
+    print("dark");
     emit(DarkMode());
   }
 
   onLightMode() {
+    print("light");
     emit(LightMode());
   }
 }
