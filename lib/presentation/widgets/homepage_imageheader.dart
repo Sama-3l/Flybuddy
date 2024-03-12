@@ -26,10 +26,7 @@ class ImageHeader extends StatelessWidget {
         padding: const EdgeInsets.only(left: 10, right: 10, bottom: 10),
         child: Column(
           children: [
-            const Expanded(
-                child: SizedBox(
-              width: double.infinity,
-            )),
+            Spacer(),
             Expanded(child: HeroCard(theme: theme)),
           ],
         ),
